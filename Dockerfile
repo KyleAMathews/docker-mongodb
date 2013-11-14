@@ -13,4 +13,4 @@ RUN apt-get install mongodb-10gen
 VOLUME /data/db
 
 EXPOSE 27017
-CMD ["usr/bin/mongod", "--smallfiles"]
+ENTRYPOINT ["usr/bin/mongod", "--smallfiles"]
