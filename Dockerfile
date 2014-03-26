@@ -7,6 +7,9 @@ RUN echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen
 RUN dpkg-divert --local --rename --add /sbin/initctl
 RUN ln -s /bin/true /sbin/initctl
 
+# Setup locale http://stackoverflow.com/a/19114298/182702
+locale-gen en_US en_US.UTF-8
+
 RUN apt-get update
 RUN apt-get install mongodb-10gen
 
