@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:14.04
 MAINTAINER Kyle Mathews "mathews.kyle@gmail.com"
 
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
@@ -10,7 +10,7 @@ RUN dpkg-divert --local --rename --add /sbin/initctl
 RUN locale-gen en_US en_US.UTF-8
 
 RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get install mongodb-10gen=2.4.9
+RUN DEBIAN_FRONTEND=noninteractive apt-get install mongodb-10gen=2.6.4
 
 VOLUME /data/db
 
